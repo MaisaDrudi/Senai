@@ -1,0 +1,58 @@
+form{
+    justify-content: center;
+    display: flex;
+}
+form label{
+    padding: 10px;
+    border-radius: 4px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+form input{
+    padding: 10px;
+    border-radius: 4px;
+}
+
+table{
+    justify-content: center;
+    align-items: center;
+    display:grid;
+}
+
+table th{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding:10px;
+    margin: 10px;
+    width: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+table td{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding:10px;
+    margin: 10px;
+    width: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+table td button{
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.msg{
+    justify-content: center;
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding:10px;
+    margin: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}

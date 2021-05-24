@@ -1,0 +1,31 @@
+CRONOGRAMA - Quando. (4º)
+
+--Tarefas
+-Quem
+-Quando
+
+---------------------------------------------------------------------------------
+1º Objetivo - O que você vai fazer?
+
+Desenvolver uma rede social.
+
+°Geral;
+
+Alunos -> Senai.
+
+°Espicíficos;
+
+Praticar Front.
+
+---------------------------------------------------------------------------------
+== Introdução / Resumo (Antes da introdução)
+
+2º Justificativa - Por que você vai fazer?
+
+3º Materiais / Metodos Execussão - Como você vai fazer isso?
+
+5° Custo / Orçamento.
+
+-Gráfico de Gantt
+-Latex
+-Overleaf

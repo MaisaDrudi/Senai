@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="ipapel.png">
+    <link rel="stylesheet" type="text/css" href="receitas.css" />
+    <title>Receitas</title>
+</head>
+
+<body>
+    <div class="form1">
+        <form method="POST" enctype="multipart/form-data" action="processa_receitas.php">
+            <div><label>Tipo:</label><input type="text" name="tipo" required /></div>
+            <div><label>Nome:</label><input type="text" name="nome" required /></div>
+            <div><textarea name="ingredientes" required>Ingredientes:</textarea></div>
+            <div><textarea name="mododefazer" required>Modo de fazer.</textarea></div>
+            <div><input type="file" name="foto" required/></div>
+            <div><input type="submit" name="oficialform" value="Cadastrar"/></div>
+        </form>
+    </div>
+    <div class="lista">
+        <iframe src="lista_receitas.php"></iframe>
+    </div>
+</body>
+
+</html>

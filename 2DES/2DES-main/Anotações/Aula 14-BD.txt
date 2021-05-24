@@ -1,0 +1,60 @@
+	Aula 14/ Alterações no código
+
+-------------------------------------------------------------------------
+*Lista PHP*    
+
+//$p1 = new Pessoa (); //Objeto
+
+    //$p1->setIdPessoa(1);
+    //$p1->setNome("André Silva");
+    //$p1->setTelefone("19 99749-3553");
+
+    //Outro método:
+    //var_dump ($p1);
+    //echo é como print.
+
+    //echo $p1->gitIdPessoa()."<br>";
+    //echo $p1->gitNome()."<br>";
+    //echo $p1->gitTelefone()."<br>";
+
+    //$json = json_encode($p1);
+    //echo $json;
+
+    $pessoa = new Pessoa();
+    $pessoa->setIdPessoa(0);
+    $pessoa->SetNome("Jair Silva");
+    $pessoa->setTelefone("19 97898-7897");
+    $pessoas[0] = $pessoa;
+ 
+    $pessoa = new Pessoa();
+    $pessoa->setIdPessoa(1);
+    $pessoa->SetNome("Maria Rita");
+    $pessoa->setTelefone("19 99887-7897");
+    $pessoas[1] = $pessoa;
+
+    $pessoa = new Pessoa();
+    $pessoa->setIdPessoa(2);
+    $pessoa->SetNome("Sula Miranda");
+    $pessoa->setTelefone("19 99892-7531");
+    $pessoas[2] = $pessoa;
+
+    for($i = 0; $i < count($pessoas); $i++) {
+        echo $pessoas[$i]->getIdPessoa();
+        echo $pessoas[$i]->getNome();
+        echo $pessoas[$i]->getTelefone();
+        echo "<br>";
+    }    
+
+    foreach($pessoas as $p) {
+        echo $p->getIdPessoa();
+        echo $p->getNome();
+        echo $p->getTelefone();
+        echo "<br>";
+    }
+-------------------------------------------------------------------------
+
+-> PHP só web/ Somente Back-end
+-> Função Recursiva: *Uma função que chama ela própria*, um looping infinito.
+-> Classe estatica: Uma classe que já é um objeto./Uma classe que não precisa instanciar.
+
+*Uma classe serve exclusivamente para virar um objeto.*

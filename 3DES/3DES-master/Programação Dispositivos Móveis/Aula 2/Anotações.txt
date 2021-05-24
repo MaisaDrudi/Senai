@@ -1,0 +1,3 @@
+Acelerômetro = Alterar os eixos;
+Giroscópio =  Girar para alterar os eixos, rotacionando;
+

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega-sena</title>
+
+    <style type="text/css">
+        *{margin: 0;}
+
+        body{
+            background: #f0ced4;
+        }
+        .header{
+            width: 100%;
+            background-color: rgba(0,0,0,.2);
+        }
+
+        .header ul{
+            text-align: center;
+        }
+
+        .header ul li{
+            list-style: none;
+            display: inline-block;
+        }
+
+        .header ul li a{
+            display: block;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #000000;
+            font-size: 10;
+            font-family: 'Raleway', sans-serif;
+            letter-spacing: 20px;
+            font-weight: 700;
+            padding: 25px;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+        function jogo(max){
+            var pr = [];
+            numero = document.getElementById("numero").value;
+            for( j = 0; j < numero; j++) {
+                var valor = Math.floor(Math.random() * max + 1);
+                for( i = 0; i < pr.length; i++){
+                    if(valor == pr[i]){valor = Math.floor(Math.random() * max + 1); i = -1;}
+                }
+                pr[i] = valor;
+            }
+            var saida = document.createElement("DIV");
+            saida.setAttribute("style", "width:100%; float:left; ");
+            for(i = 0; i < numero; i++){
+                var a = document.createElement("DIV");
+                var b = document.createElement("DIV");
+                var c = document.createTextNode(pr[i]);
+                a.setAttribute("style", "background-color: #ffffff; height:50px; width:50px; float:left; margin:10px;");
+                b.setAttribute("style", "background-color: #ffffff; height:10px; width:10px; float:left; position:relative; top:12px; left:18px;");
+                saida.appendChild(a);
+                a.appendChild(b);
+                b.appendChild(c);
+                document.getElementById("saida").appendChild(saida);}
+            }
+            function megaSena(){
+                document.getElementById("saida").innerHTML="";
+                quant = document.getElementById("quant").value;
+                for(n = 1; n <= quant; n++){jogo(60);}
+            }
+            function salvarArquivo() {
+            let arq = document.getElementById("saida").value;
+            if (arq.length > 0) {
+                let a = document.createElement("a");
+                a.href = "data:," + arq;
+                a.download = "saida.txt";
+                a.click();
+            } else {
+                alert("Vazio "+ arq);
+            }
+        }
+    </script>
+
+    <div class="header">
+        <ul>
+            <li><a href="/Exercício 1.html">Exercício 1</a></li>
+            <li><a href="/Exercício 2.html">Exercício 2</a></li>
+            <li><a href="/Exercício 3.html">Exercício 3</a></li>
+
+        </ul>
+    </div>
+    <div>
+    <center>
+        <fieldset style="width: 30%; position: center;">
+            
+                    </br>
+                    <h2>Jogo Mega-Sena</h2><br/>
+
+                  <div id="escolhas">
+                  <h3>Faça AGORA sua aposta!</h3><br/>
+                  <p>Quantidade de jogos: <input type="text" id="quant" value="1"></br></p>
+                  </br> 
+                  <p>Quantidade de números por jogo: 
+                    <select type="text" id="numero">
+                    <option value= "6"> 6</option>
+                    <option value= "7"> 7</option>
+                    <option value= "8"> 8</option>
+                    <option value= "9"> 9</option>
+                    <option value="10">10</option>
+                    </select>
+                  </p><br/>
+                </div>
+                <input type="button" id="button" value="Gerar" onclick=megaSena()>
+                </br></br>
+                <div id="saida"></div>
+
+                <input type="button" onclick="salvarArquivo()" value="Salvar"/>
+            
+        </fieldset>
+    </center>
+    </div>
+    
+</body>       
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+
+
+    <title>Nota Fiscal</title>
+</head>
+    <body>
+        <center>
+            <fieldset>
+                <div>
+                    <table class="cabeçalho">
+                        <tr>
+                            <th>ESTADO DE SÃO PAULO&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</th>
+                            <th>SECRETARIA DO ESTADO</th>
+                        </tr>
+                        <tr>
+                            <th>NOTA FISCAL AVULSA</th>
+                            <th>Nº 000.000</th>
+                            <th>1ºVIA-DESTINATÁRIO/REMETENTE</th>
+                        </tr>    
+                    </table>
+                </br>
+                </div>
+            </fieldset>
+    
+            <fieldset>   
+                    <table border="2">
+                    </br>
+                        <center><h3>EMITENTE</h3></center>
+                    </br>
+                        <tr>
+                            <td>NOME/RAZÃO SOCIAL:<input type="text" id="Empresa" value=" Empresa Hortelino LTDA." readonly/></td>
+                            <td>CNPJ:<input type="text" id="cnpj" value=" 18.236.120/0001-58" readonly/></td>
+                            <td>DATA:<input type="date" id=" data"/></td>
+                        </tr>
+                        <tr>        
+                            <td>ENDEREÇO:<input type="text" id="Endereço" value=" Rua Luis Dalto." readonly/></td>
+                            <td>BAIRRO/DISTRITO:<input type="text" id="Bairro" value=" Limoeiro." readonly/></td>
+                            <td>CEP:<input type="text" id="CEP" value=" 13920-000" readonly/></td>
+                        </tr>
+                    </table>
+                </br>
+        </fieldset>
+    
+        <fieldset>
+            <div>
+                <table border="2">
+                </br>
+                    <center><h3>DESTINATÁRIO: </h3></center>
+                </br>
+                    <tr>
+                        <td>EMPRESA:<input type="text" id="EmpresaA" value=" Arnaldo Decorações." readonly/></td>
+                        <td>CNPJ:<input type="text" id="CNPJ" value=" 89.531.333/0002-45" readonly/></td>
+                        <td>DATA:<input type="date" id=" data"/></td>
+                    </tr>
+                    <tr>
+                        <td>CEP:<input type="text" id="CEP" value=" 12345-000" readonly/></td>
+                        <td>ENDEREÇO:<input type="text" id="Endereço" value=" Rua Jurema Nevis." readonly/></td>
+                        <td>BAIRRO/DISTRITO:<input type="text" id="Bairro" value=" Laranjais." readonly/></td>       
+                    </tr>
+                </table>
+            </div>
+        </br>
+            </fieldset>
+    
+            <fieldset>
+                <div>
+                    <table class="lasanha" border="2">
+                        </br>
+                            <center><h3>COMPRA:</h3></center>
+                        </br>
+                            <tr>
+                                <td>PRODUTO:<input type="text" id="descrição"/></td> <!--<select name="produtos" id="prods"></select>-->
+                                <td>QUANTIDADE:<input type="number" id="quantidade"/></td>
+                                <td>PREÇO:<input type="number" id="preço"/></td>  
+                                <td><button onclick="adicionaLinha('tbl')">Adicionar</button></td>
+                            </tr>
+                    </table>
+                 </div>      
+             </br>
+            </fieldset> 
+            <fieldset>
+                <table border="2">
+                </br>
+                        <tr>
+                        
+                            <th><h3> &ensp;PRODUTO &ensp;</h3></th>
+                            <th><h3> &ensp;QUANTIDADE &ensp;</h3></th>
+                            <th><h3> &ensp;PREÇO &ensp;</h3></th>
+                            <th><h3> &ensp;SUBTOTAL &ensp;</h3></th>
+                        </tr>
+                    
+                    
+                </table>
+                    <table class="bolinho" border="2" id='tbl'></table>
+        </div>
+    </br>
+        <div class="Total">
+            <table border="2">
+                <tr>
+                    <th><h3>TOTAL DA NOTA</h3></th>
+            </br>
+                    <th><p id="totalCompra"></p></th>
+                </tr>
+            </table>
+
+        </div>    
+            </fieldset>      
+    
+            <script type="text/javascript" src="WebF.js"></script>
+
+        </body>    
+    </html>
+
+                

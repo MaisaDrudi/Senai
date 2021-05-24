@@ -1,0 +1,36 @@
+
+insert into COmpras(nome, data, valor, quantidade) values ("Caixa Para Doces",NOW(),8.98,520)
+insert into Compras(cod, data, valor, quantidade) values (10,NOW(),10.5,520),
+
+UPDATE mercadoria SET valor = (SELECT valor FROM mercadorias WHERE cod = 10 ORDER BY preco DESC LIMIT 1),
+quantidade = SELECT SUM(quantidade) FROM mercadorias WHERE cod = 10) WHERE nome = "Caixa Para Doces"
+
+SELECT cod FROM mercadoria  WHERE nome = "Caixa Para Doces"
+
+if() {
+
+	insert into Compras(nome, data, valor, quantidade) values ("Caixa Para Doces",NOW(),10.5,520),
+
+	UPDATE mercadoria SET valor = (SELECT valor FROM compras WHERE nome = "Caixa Para Doces" ORDER BY preco DESC LIMIT 1),
+	quantidade = SELECT SUM(quantidade) FROM compras WHERE nome = "Caixa Para Doces") WHERE nome = "Caixa Para Doces"
+
+}else {
+
+	insert into mercadoria(nome, valor, quantidade) values ("balão",10.5,520),
+	
+	insert into Compras(cod, data, valor, quantidade) values (11,NOW(),10.5,520),
+
+}
+
+
+
+
+UPDATE Mercadorias SET valor = (SELECT valor FROM Compras WHERE cod_merc = 1 ORDER BY preco DESC LIMIT 1),quantidade = (SELECT SUM(quantidade) FROM Vendas WHERE cod_merc = 1) WHERE cod = 1;
+UPDATE Mercadorias SET valor = (SELECT valor FROM Compras WHERE cod_merc = 2 ORDER BY preco DESC LIMIT 1),quantidade = (SELECT SUM(quantidade) FROM Vendas WHERE cod_merc = 2) WHERE cod = 2;
+UPDATE Mercadorias SET valor = (SELECT valor FROM Compras WHERE cod_merc = 3 ORDER BY preco DESC LIMIT 1),quantidade = (SELECT SUM(quantidade) FROM Vendas WHERE cod_merc = 3) WHERE cod = 3;
+UPDATE Mercadorias SET valor = (SELECT valor FROM Compras WHERE cod_merc = 4 ORDER BY preco DESC LIMIT 1),quantidade = (SELECT SUM(quantidade) FROM Vendas WHERE cod_merc = 4) WHERE cod = 4;
+UPDATE Mercadorias SET valor = (SELECT valor FROM Compras WHERE cod_merc = 5 ORDER BY preco DESC LIMIT 1),quantidade = (SELECT SUM(quantidade) FROM Vendas WHERE cod_merc = 5) WHERE cod = 5;
+UPDATE Mercadorias SET valor = (SELECT valor FROM Compras WHERE cod_merc = 6 ORDER BY preco DESC LIMIT 1),quantidade = (SELECT SUM(quantidade) FROM Vendas WHERE cod_merc = 6) WHERE cod = 6;
+UPDATE Mercadorias SET valor = (SELECT valor FROM Compras WHERE cod_merc = 7 ORDER BY preco DESC LIMIT 1),quantidade = (SELECT SUM(quantidade) FROM Vendas WHERE cod_merc = 7) WHERE cod = 7;
+UPDATE Mercadorias SET valor = (SELECT valor FROM Compras WHERE cod_merc = 8 ORDER BY preco DESC LIMIT 1),quantidade = (SELECT SUM(quantidade) FROM Vendas WHERE cod_merc = 8) WHERE cod = 8;
+UPDATE Mercadorias SET valor = (SELECT valor FROM Compras WHERE cod_merc = 9 ORDER BY preco DESC LIMIT 1),quantidade = (SELECT SUM(quantidade) FROM Vendas WHERE cod_merc = 9) WHERE cod = 9;

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+
+
+    <title>Nota Fiscal</title>
+</head>
+    <body>  
+        <div>
+            <table class="cabeçalho">
+                <tr>
+                    <b>ESTADO DE SÃO PAULO</b></br>
+                    <b>SECRETARIA DO ESTADO</b></br>
+                </tr>
+                <tr>
+                    <b>NOTA FISCAL AVULSA</b></br>
+                    <b>Nº 000.000</b></br>
+                    <b>1ºVIA-DESTINATÁRIO/REMETENTE</b></br>
+                </tr>
+            </table>
+        </br>
+        </div>
+        <div>
+            <h3>EMITENTE</h3>
+            <table>
+                <tr>
+                    <td>NOME/RAZÃO SOCIAL:
+                        <input type="text" id="Empresa" value="Empresa Hortelino LTDA." readonly/>
+                    </td>
+                    <td>CNPJ:
+                        <input type="text" id="CNPJ" value="18.236.120/0001-58" readonly/>
+                    </td>
+                    <td>ENDEREÇO:
+                        <input type="text" id="Endereço" value="Rua Luis Dalto." readonly/>
+                    </td>
+                    <td>BAIRRO/DISTRITO:
+                        <input type="text" id="Bairro" value="Limoeiro." readonly/>
+                    </td>
+                    <td>CEP:
+                        <input type="text" id="CEP" value="13920-000" readonly/>
+                    </td>
+                    <td>DATA:
+                        <input type="date" id="data"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </br>
+    <div>
+        <h3>DESTINATÁRIO: </h3>
+        <tr>
+            <td>EMPRESA: 
+                <input type="text" id="EmpresaA" value="Arnaldo Decorações." readonly/>
+            </td>
+            <td>CNPJ:
+                <input type="text" id="CNPJ" value="89.531.333/0002-45" readonly/>
+            </td>
+            <td>ENDEREÇO:
+                <input type="text" id="Endereço" value="Rua Jurema Nevis." readonly/>
+            </td>
+            <td>BAIRRO/DISTRITO:
+                <input type="text" id="Bairro" value="Laranjais." readonly/>
+            </td>
+            <td>CEP:
+                <input type="text" id="CEP" value="12345-000" readonly/>
+            </td>
+        </tr>
+    </div>
+</br>
+    <div>
+        <h3>COMPRA: </h3>
+
+        <label>
+            <td>PRODUTO:
+                <input type="text" id="descrição" onclick=calcular()/>
+            </td>
+            <td>QUANTIDADE: 
+                <input type="number" id="quantidade" onclick=calcular()/>
+            </td>
+            <td>PREÇO:
+                <input type="number" id="preço" onclick=calcular()/>
+            </td>
+                
+            <button onclick="adicionaLinha('tbl')">Adicionar</button>
+            <button onclick="removeLinha(this)">Remover</button>
+
+        </label>
+    </div>      
+</br>
+    <div>
+        <center>
+            <table>
+                <tr>
+                    <th><h3>PRODUTO &ensp;</h3></th>
+                    <th><h3>QUANTIDADE &ensp;</h3></th>
+                    <th><h3>PREÇO &ensp;</h3></th>
+                    <th><h3>SUBTOTAL &ensp;</h3></th>
+                </tr>
+
+    
+            </table>
+                <table id='tbl'></table>
+        </center>
+    </div>
+</br>
+    <div class="Total">
+        <center>
+            <tr>
+                <th><h3>TOTAL DA NOTA</h3></th>
+        </br>
+                <th><p id="totalCompra"></p></th>
+            </tr>
+    
+            <button onclick="deletar('total')">Limpar</button>
+        </center>
+    </div>
+            <script type="text/javascript" src="WebF.js"></script>
+
+        </body>    
+    </html>
+
+                

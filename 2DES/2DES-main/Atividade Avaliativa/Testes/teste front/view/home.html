@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<script src="home.js"></script>
+</head>
+
+
+<body>
+	<nav id="menu-h">
+		<ul>
+			<center>
+				<li>NOTA FISCAL</li>
+			</center>
+		</ul>
+	</nav>
+	<table id="tabela1">
+		<tr>
+			<td>Itens: <input type="text" placeholder="Descrição..." id="descricao"></td>
+			<td><input type="number" placeholder="Qtd..." id="quantidade"></td>
+			<td><input type="text" placeholder="Preço em R$..." id="preco"></td>
+			<td><button onclick="adicionaLinha()">Add</button></td>
+		</tr>
+	</table>
+	<table border="1" cellpadding="3" id="tabela2">
+		<h3>EMITENTE</h3>
+		
+		<tr>
+			<td>NOME/RAZÃO SOCIAL:
+				<input type="text" id="Empresa" value="Empresa Hortelino LTDA." readonly/>
+			</td>
+			<td>CNPJ:
+				<input type="text" id="CNPJ" value="18.236.120/0001-58" readonly/>
+			</td>
+		</tr>
+		<tr>	
+			<td>ENDEREÇO:
+				<input type="text" id="Endereço" value="Rua Luis Dalto." readonly/>
+			</td>
+			<td>BAIRRO/DISTRITO:
+				<input type="text" id="Bairro" value="Limoeiro." readonly/>
+			</td>
+			<td>CEP:
+				<input type="text" id="CEP" value="13920-000" readonly/>
+			</td>
+			<td>DATA:
+				<input type="date" id="data"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="data">Data: <input id="date" type="date"></td>
+		</tr>
+		<tr>
+			<td class="local">Rua Frei Caneca (São Paulo)</td>
+		</tr>
+	</table>
+	<table border="1" id="tabelaProdutos">
+		<tr>
+			<td class="produtos">Produtos diversos</td>
+		</tr>
+	</table>
+	<div>
+		<table border="1" id="tbl">
+			<tr>
+				<td class="center"><b>Descrição</b></td>
+				<td class="center"><b>Qtd</b></td>
+				<td class="center"><b>Preço</b></td>
+				<td class="center"><b>Subtotal</b></td>
+			</tr>
+			<tbody id="tabela">
+			</tbody>
+		</table>
+
+
+	</div>
+	<table border="1" id="tabelaTotal">
+		<tr>
+			<td class="totalNota">Total da nota: <input type="text" id="totalCompra" readonly></td>
+		</tr>
+	</table>
+</body>
+
+
+</html>

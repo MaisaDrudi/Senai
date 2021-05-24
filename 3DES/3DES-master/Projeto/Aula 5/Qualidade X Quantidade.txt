@@ -1,0 +1,34 @@
+Qualidade X Quantidade                     
+------------------------------------------------//
+                                                            
+-> ABNT                                              
+-> IN                                                    
+-> ANVISA                                           
+-> OMS                                               
+-> ISO                                                 
+------------------------------------------------//
+ADM                                                   
+                                                            
+Estratégia;                                          
+Gerência / Tático;                               
+Exercusão / Operacional;                   
+                                                            
+------------------------------------------------//
+ITIL
+
+Incidente - Insident
+Mudança - Change
+Solicitação de serviço
+                           - SR
+
+------------------------------------------------//
+DEMANDA
+Sveridade 1, 2, 3;
+
+------------------------------------------------//
+
+Confiança $
+Evidência.
+
+------------------------------------------------//
+

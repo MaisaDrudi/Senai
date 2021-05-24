@@ -1,0 +1,39 @@
+.form1{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.form1 div{
+    margin:5px;
+    align-items: right;
+    display: flex;
+}
+
+.form1 div input{
+    padding: 5px;
+    width: 80%;
+    border-radius: 4px;
+}
+
+.form1 div label{
+    padding: 5px;
+    width: 30%;
+}
+
+.form1 form textarea{
+    width: 400px;
+    height: 60px;
+}
+
+.lista{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.lista iframe{
+    width: 700px;
+    height: 300px;
+}

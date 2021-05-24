@@ -1,0 +1,18 @@
+.body{
+    margin: 0 auto;
+}
+
+input{
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 35px;
+    width: 160px;
+}
+
+fieldset{
+    width: 900px;
+}
+ .bolinho{
+    height: 50px;
+    width: 510px;
+ }

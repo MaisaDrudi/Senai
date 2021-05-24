@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="TAP.css">
+</head>
+<body>
+        <div id="form">
+        <center>
+            <fieldset>
+                <h1>Formulário</h1>
+
+                <label for="descricao"><b>Descrição:</b></label><br/>
+                <input type="text" id="d" placeholder="Descrição do projeto." required="required" name="descrição" />
+                <br/>
+                <label for="tecno"><b>Recursos Humanos:</b></label><br/>
+                <input type="text" id="r" placeholder="Recursos Humanos." name="rh" />
+                <br/>
+                <label for="patro"><b>Patrocinadores:</b></label><br/>
+                <input type="text" id="p" placeholder="Patrocinadores." name="patrocinadores" />
+                <br/>
+                <label for="gerente"><b>Gerente de Projeto:</b></label><br/>
+                <input type="text" id="g" placeholder="Gerente de Projeto." name="gerente" />
+                <br/>
+                <label for="data"><b>Data de conclusão:</b></label><br/>  
+                <input type="date" id="dt" placeholder="Exemplo: aa/aa/aaaa" name="conclusão" />
+                <br/>
+                <br/>
+                
+                <input type="button"  onclick="gerarPDF();" value="Imprimir" />
+            </fieldset>
+        </center>
+        </div>
+</body>
+<script src="TAP.js"></script>
+</html>

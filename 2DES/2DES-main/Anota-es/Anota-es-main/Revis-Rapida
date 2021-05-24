@@ -1,0 +1,25 @@
+A diferença de um ambiente de servidor e computador = PC só você/ Servidor todos.
+Diferença entre compilar e intepretar?
+*Java - VM
+JSP - Apache Tomcat*
+JS - Todos, menos maquina virtual;
+Css - Browser/Chrome;
+Html - Browser/Chrome;
+Php - Servidor - Apache;
+SQL - SGBD (Sistema de gerenciamento de banco de dados);
+Mobile - Emulador - //42
+
+IDE - Ambiente integrao de desenvolvimento - VS Code
+**Live Serve 
+
+Apache - PHP
+Tomcat - JSP
+iis - ASP
+
+DEV ->TEST ->PROD   
+
+Problemas INFRA
+
+Váriavel Css
+Id
+Name * Name é enviado para p Backend

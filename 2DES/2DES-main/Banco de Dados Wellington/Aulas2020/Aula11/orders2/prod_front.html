@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="prod_style.css" />
+    <title>Products</title>
+</head>
+
+<body>
+    <form enctype="multipart/form-data" method="POST" action="http://localhost/orders/src/prod_rest.php">
+        <input type="text" name="name" placeholder="Product name" required />
+        <input type="number" name="quantity" placeholder="Quantity" required />
+        <label>Picture</label><input type="file" name="picture" />
+        <input type="submit" value="Send" />
+    </form>
+    <div class="msg" id="mensagem"></div>
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Picture</th>
+            <th>Action</th>
+        </thead>
+        <tbody id="corpoTabela">
+        </tbody>
+    </table>
+    <script src="prod_script.js"></script>
+</body>
+
+</html>

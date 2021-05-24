@@ -1,0 +1,173 @@
+drop database if exists normalizacao;
+create database normalizacao;
+use normalizacao;
+--Esta tabela não está normalizada, serve de exemplo e será excluída assim que for Normalizada
+create table Clientes(
+	cpf varchar(11) not null primary key,
+	nome varchar(40) not null,
+	telefone varchar(1024),
+	email varchar(2048)
+);
+
+insert into Clientes values 
+("78945612378","Jacinto Pena","19 35465-7778, 19 35467-78987","jacintoo@gmail.com"),
+("65478978978","Passos Dias Aguiar",null,"passoso@gmail.com, passos@hotmail.com"),
+("49846545654","Osmar Motta","19 35465-9879, 19 45657-78988",null),
+("74897988798","Suzana Vieira","19 35465-4566","suzanao@gmail.com");
+
+--Estas três próximas tabelas formam a "ENTIDADE" Cliente.
+create table ClientesN(
+	cpf varchar(11) not null primary key,
+	nome varchar(40) not null
+);
+
+create table TelefonesN(
+	cpf varchar(11) not null,
+	telefone varchar(15),
+	constraint fk_tel_cli foreign key (cpf) references ClientesN(cpf) on delete cascade on update cascade
+);
+
+create table EmailN(
+	cpf varchar(11) not null,
+	email varchar(50),
+	constraint fk_email_cli foreign key (cpf) references ClientesN(cpf) on delete cascade on update cascade
+);
+
+insert into ClientesN values
+("78945612378","Jacinto Pena"),
+("65478978978","Passos Dias Aguiar"),
+("49846545654","Osmar Motta"),
+("74897988798","Suzana Vieira");
+
+insert into TelefonesN values
+("78945612378","19 35465-7778"),
+("78945612378","19 35467-78987"),
+("49846545654","19 35465-9879"),
+("49846545654","19 45657-78988"),
+("74897988798","19 35465-4566");
+
+insert into EmailN values
+("78945612378","jacintoo@gmail.com"),
+("65478978978","passoso@gmail.com"),
+("65478978978","passos@hotmail.com"),
+("74897988798","suzanao@gmail.com");
+
+--QUERIES
+select * from Clientes;
+select * from TelefonesN;
+select * from EmailN;
+select * from ClientesN;
+select c.cpf, c.nome, t.telefone from clientesn c left join telefonesn t on c.cpf = t.cpf;
+select c.cpf, c.nome, e.email from clientesn c left join emailn e on c.cpf = e.cpf;
+--VIEW (Visão)
+create view vwclientes as
+select c.cpf, c.nome, t.telefone, e.email from clientesn c left join telefonesn t on c.cpf = t.cpf left join emailn e on c.cpf = e.cpf;
+
+select * from vwclientes;
+drop table clientes;
+
+--SEGUNDA FORMA NORMAL (A tabela abaixo será excluída após ser normalizada)
+create table pedidosP (
+	n_pedido integer not null primary key auto_increment,
+	cod_prod integer not null,
+	nome varchar(50) not null,
+	qtd integer not null,
+	val_unit decimal(8,2) not null,
+	subtotal decimal(8,2) not null
+);
+
+insert into pedidosP values
+(default,1,"Impressota Laser",1,1000,1000),
+(default,3,"Impressota DeskJet",2,700,1400),
+(default,2,"Impressora Matricial",4,1200,4800),
+(default,1,"Impressota Laser",1,1000,1000),
+(default,4,"Impressora Mobile",2,1800,3600),
+(default,4,"Impressora Mobile",1,1800,1800);
+
+-- APLICANDO A SEGUNDA FORMA NORMAL
+create table pedidos(
+	n_pedido integer not null primary key auto_increment,
+	cod_prod integer not null,
+	qtd integer not null,
+	subtotal decimal(8,2) not null
+);
+
+create table produtos(
+	cod_prod integer not null primary key auto_increment,
+	nome varchar(40) not null,
+	val_unit decimal(8,2) not null
+);
+
+alter table pedidos add constraint fk_ped_prod foreign key (cod_prod) references produtos(cod_prod);
+
+insert into produtos values
+(default,"Impressota Laser",1000),
+(default,"Impressora Matricial",1200),
+(default,"Impressota DeskJet",700),
+(default,"Impressora Mobile",1800);
+
+insert into pedidos values
+(default,1,1,1000),
+(default,3,2,1400),
+(default,2,4,4800),
+(default,1,1,1000),
+(default,4,2,3600),
+(default,4,1,1800);
+
+-- REMOVER CAMPOS CALCULADOS (TERCEIRTA FORMA NORMAL)
+drop table pedidosP;
+drop table pedidos;
+
+create table pedidos(
+	n_pedido integer not null primary key auto_increment,
+	cod_prod integer not null,
+	qtd integer not null
+);
+
+alter table pedidos add constraint fk_ped_prod foreign key (cod_prod) references produtos(cod_prod);
+
+insert into pedidos values
+(default,1,1),
+(default,3,2),
+(default,2,4),
+(default,1,1),
+(default,4,2),
+(default,4,1);
+
+select * from produtos;
+select * from pedidos;
+
+-- RELACIONAR TODO O BANCO DE DADOS (Clientes com Pedidos)
+drop table pedidos;
+
+create table pedidos(
+	n_pedido integer not null primary key auto_increment,
+	cpf varchar(11) not null,
+	cod_prod integer not null,
+	qtd integer not null
+);
+alter table pedidos add constraint fk_ped_prod foreign key (cod_prod) references produtos(cod_prod);
+alter table pedidos add constraint fk_ped_cli foreign key (cpf) references ClientesN(cpf);
+
+insert into pedidos values
+(default,"78945612378",1,1),
+(default,"78945612378",3,2),
+(default,"65478978978",2,4),
+(default,"49846545654",1,1),
+(default,"74897988798",4,2),
+(default,"74897988798",4,1);
+
+create view vwpedidos as
+select pe.n_pedido, pe.cpf, pe.cod_prod, pr.nome, pe.qtd, pr.val_unit, pr.val_unit * pe.qtd as subtotal from pedidos pe left join produtos pr on pe.cod_prod = pr.cod_prod;
+select * from vwpedidos;
+
+-- Este banco de dados foi normalizado nas 3 formas normais e os seus relacionamentos foram integralizados.
+
+
+
+
+
+
+
+
+

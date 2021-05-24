@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#menu-h {
+    background-color: rgb(37, 37, 39);
+}
+
+#menu-h ul {
+    max-width: 800px;
+    list-style: none;
+    padding: 0;
+}
+
+#menu-h ul li {
+    display: inline;
+}
+
+#menu-h li {
+    font-size: 30px;
+    outline: 0;
+    color: white;
+}
+
+#tabela1 {
+    margin-top: 20px;
+}
+
+input {
+    margin-left: 10px;
+    height: 25px;
+    width: 100px;
+}
+
+::-webkit-input-placeholder {
+    text-align: left;
+}
+
+button {
+    height: 30px;
+    width: 50px;
+    margin-left: 5px;
+    cursor: pointer;
+
+}
+
+#tabela2 {
+    margin-top: 10px;
+    width: 800px;
+}
+
+.logo {
+    border: none;
+    text-align: center;
+}
+
+.destino {
+    text-align: center;
+    padding: 10px;
+}
+
+.data {
+    text-align: center;
+    padding: 10px;
+}
+
+input[type=date] {
+    width: 137px;
+}
+
+input[id="cpf"] {
+    width: 137px;
+}
+
+.local {
+    text-align: center;
+    padding: 10px;
+}
+
+#tabelaProdutos {
+    width: 800px;
+}
+
+.produtos {
+    padding-top: 3px;
+    border: none;
+}
+
+#tbl {
+    width: 800px;
+
+}
+
+.center {
+    text-align: center;
+    border: none;
+}
+
+
+#tabelaTotal {
+    width: 800px;
+}
+
+.totalNota {
+    border: none;
+    text-align: right;
+    padding: 30px;
+}
+
+#totalCompra {
+    font-size: 16px;
+}
+
+#totalCompra:focus {
+    outline: 0;
+}
+
+#tabela {
+    width: 800px;
+    text-align: center;
+}

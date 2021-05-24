@@ -1,0 +1,7 @@
+{
+  "name": "giroscopio-acelerometro",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
